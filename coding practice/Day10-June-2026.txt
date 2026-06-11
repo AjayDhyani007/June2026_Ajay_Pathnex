@@ -1,0 +1,92 @@
+
+
+
+
+      ---
+    -name: Install htop
+    bocome: yes
+
+
+    task:
+     - name: Install htop
+     yum:
+       name: htop
+       state: persent
+     wnen: ansible_facts['os_family'] == "RedHat'
+
+
+
+     resource "aws_route_table" "AjayRouteTable" {
+ vpc_id = aws_vpc.AjjuVPC.id
+
+ route {
+   cidr_block = "0.0.0.0/0"
+   gateway_id = aws_internet_gateway.AjayInternetGateWay.id
+ }
+
+ tags = {
+  Name = Ajay-RouteTable"
+ }
+   }
+
+  resourse "aws_route_table_association"   "AjayRouteTable"{
+     subnet_id = aws_subnet.AjaySubnet.id
+     route_table_id = aws_route_table_AjayRouteTable.id
+  }
+
+
+   apiVersion: V1
+  kind: Secret
+  metadata:
+     name: nokia-secret
+    type: Opaque
+    data:
+    password: ABCD@#12== # "ajay231" base64
+
+    #!/bin/bash
+
+for i in {1..10}; do
+  echo "Number: $i"
+done
+
+
+pipeline {
+     agent ay
+     environment {
+        INSTITUTE_NAME = "Gurukul"
+     }
+     stages {
+       stage('Checkout'){
+        steps {
+          git url: 'https://github.com/Pathnex/saple-java-app.git'
+        }
+       }
+       stage('Build") {
+        steps {
+          sh '''
+          if [ -d '.m2"]; then
+               echo "Using cachecd dependencies"
+               else
+                mvn clean compile
+                fi
+                '''
+        }
+       }
+     }
+}
+
+
+stages:
+  - build
+
+build:
+  stage: build
+  image: maven:3.8.1-jdk-17
+  cache:
+    key: maven-cache
+    paths:
+      - .m2/repository
+  script:
+    - git clone https://github.com/Pathnex/sample-java-app.git
+    - cd sample-java-app
+    - mvn clean compile
