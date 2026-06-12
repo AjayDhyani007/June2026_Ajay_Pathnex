@@ -1,0 +1,26 @@
+  
+
+
+
+Today Task
+
+# 3 hours watches Docker live session video
+# 2 hours watched recourded video from old batch
+# 1 hour done Git practice
+# 2 hours learn about Docker and docker components with the help of ChatGPT
+# 30 min Evening session
+# 30 min coding practice
+# 1 hour watched Kubernetes video from old recourding
+
+
+## Tomorrow's Task
+
+# 2 hours will take live class for Kubernetes
+# 2 hours will watch previous batch videos
+# 2 hours will learn about Kubrnetes and its components
+# 1 hours will revise and make notes from chatGPT
+# 1 hour coding and Git practice
+# 30 min Evening session
+
+
+
