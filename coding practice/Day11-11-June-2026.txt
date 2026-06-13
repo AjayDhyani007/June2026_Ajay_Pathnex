@@ -1,0 +1,106 @@
+
+
+
+
+        --- 
+        - name: Install MariaDB for my Collage (MGU)
+        hosts: all
+        become: yes
+        task: 
+         -name: Install MariaDb
+         yum:
+          name: mariadb-server
+          state: present
+
+
+          - name: Start MariaDB
+           service:
+            name: Mariadb
+            state: started
+            enabled: yes
+
+
+resourse "aws_instance" "Linux_machine" {
+  ami      = "ami-0abcd1234abcd1234"
+  instance_type = "r5.2xlarge"
+
+
+  tag = {
+    name = Linux-output-EC2"
+  }
+}
+
+output "MyIP" {
+  value = aws_instance.Linux_machine" {
+  }
+}
+
+
+ apiVersion: v1
+ kind: Pod
+   name: ajay-sidecar
+  spec: 
+    containers:
+      -name: main
+      image: nginx
+      - name:  sidecar
+      image: busybox
+      command: ["sh", "-c", "echo sidecar running; sleep 3600"]
+
+      #!/bin/bash
+
+greet() {
+  echo "Welcome to my new YT channel"
+}
+
+greet
+
+        pipeline {
+          agent any
+          environment 
+            CITI_NAME = "Delhi"
+        }
+       stage {
+         stages('checkout') {
+            steps {
+                git url: 'https//github.com/pathnex/sample-java-app.git'
+
+            }
+         }
+       }
+
+  
+  
+   stage('Build') {
+    steps {
+        sh 'mvn clean package'
+     
+    }
+   }
+   post {
+    success {
+      mail to: 'teams@pathnex.com',
+           subject: "SUCCESS: Build #${env.BUILD_NUMBER}",
+           body: "Build completed successfully for $GURGAON"
+    }
+    failure {
+       mail to: 'team@pathnex.com',
+          subject: "FAILURE: Build #${env.BULD_NUMBER}",
+          body: "BUild failed for $GURGAON"
+    }
+   }
+
+
+    stages :
+      -build 
+
+      build:
+        stage: build
+        image: maven.3.8.1-jdk-17
+        script:
+        - gitclone https://github.com/Pathnex/sample-java-app.git
+        -cd sample-java-app
+        - mvn clean package
+        after script:
+         -echo "sending notification email to team@gmail.com"
+

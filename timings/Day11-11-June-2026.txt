@@ -1,0 +1,25 @@
+
+
+
+Today Task
+
+# 2 hours took live session of Kubernetes
+# 2 hours watch old recourded video from previous batch
+# 2 hours make notes and revision with the help of chatGPT
+# 1 hour Git and coding practice
+# 30 Min Evening class
+# 1 hour Linux command and Git practice 
+
+
+
+## Tomorrow's Task
+
+# 2 hours will take live class for Kubernetes
+# 2 hours will watch previous batch videos
+# 2 hours will learn about kubernetes and it's componetes and make notes from chatGPT 
+# 2 hour Git and coading practice
+# 1 hour coding and Git practice
+# 30 min Evening session
+
+
+

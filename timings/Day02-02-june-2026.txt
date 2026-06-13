@@ -1,0 +1,19 @@
+
+
+Today 2 Task 
+
+# 3 hours took live online morning session
+# 2 hours Watched today's and previous batch recourded videos 
+# 2 hour revision and make notes with the help of ChatGPT 
+# 2 hours learned about Linux basic commands
+# 2 hours Done Linux basic commands after created EC2 instance in AWS
+
+
+## Tomorrow's Task
+
+
+# 2 hours will take live class
+# 2 hours watch previous batch videos
+# 2 hours will do practice for Linux advance commands which i will learn on tommorow morning session with creating EC2 machine
+# 3 hours will revise the complete task and will make notes from ChatGPT
+

@@ -1,0 +1,104 @@
+
+
+
+          --- 
+
+          -name: Create config file for My new project - DevOps
+          host: all
+          become: yes
+
+          task: 
+          - name: Write content to file
+            copy:
+             dest: /etc/devOps.confi
+             content: 
+               Welcome to My new Project DevOps
+               Hope you all are doing well
+
+        resource "aws_db_instance" "PathnexRDS" {
+   allocated_storage  = 20
+   engine             = "mysql"
+   instance_class     = "db.t3.micro"
+   name               = 'pathnexdb"
+   username           = "admin"
+   password           = "admin123"
+   skip_final_snapshot= true     
+}
+
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: pathnex-rolling
+   space:
+      replicas: 4
+      strategy: 
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable:1
+       selector:
+        natchlabels:
+          app: roll
+      template:
+        metadata:
+         labels:
+           app; roll
+         spce:
+           containers:
+            - name: web
+            image: nginx         
+
+#!/bin/bash
+
+SOURCE="/var/log"
+DEST="/backup/pathnex-$(date +%F).tar.gz"
+
+tar -czf $DEST $SOURCE
+echo "Backup created at: $DEST"
+
+
+pipeline {
+    agent any
+    environment {
+         ORGANIZATION_NAME = "Local Dukaan"
+    }
+    stages {
+      stage('checkout') {
+        steps {
+            checkout scm
+        }
+      }
+      stage('Build') {
+        steps {
+          sh 'mvn clean compile'
+
+        }
+      }
+    }
+}
+          
+
+    - dev
+
+          stages:
+    - build
+
+
+    build-main:
+      stage: build
+      image: maven:3.8.1-jdk-17
+      script:
+        -mvn clean compile
+     only
+       -main
+build-dev:
+   stage: build
+   image: maven:3.8.1-jdk-17
+   script:
+    -mvn clean compile
+  only:
+  -dev
+
+  
+
+
+       
