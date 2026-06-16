@@ -1,0 +1,25 @@
+
+
+
+
+
+Today Task
+
+# 3 hours took live session Kubernetes
+# 4 hours watched old batches videos
+# 1 hour make notes and learned about Kubernets 
+# 1 hour coding and git practice
+# 30 min Evening session
+#
+
+
+## Tomorrow's Task
+
+# 5 hours will watch all kubernetes videos
+# 2 hours learn and make notes
+# 2 hours will do practice for kubernetes cluster
+# 1 hour coding and Git practice
+
+
+
+
