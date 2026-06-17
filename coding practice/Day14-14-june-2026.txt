@@ -1,0 +1,96 @@
+
+
+
+
+provider "aws" {
+    region = "us-east-1"
+}
+
+resource  "aws_vpc" "NokiaVPC" {
+    cidr_block = "10.0.0.0/16"
+
+    tags = {
+        Name = "Nokia-VPC"
+    }
+}
+
+
+resource "aws_subnet" "Nokiasubnet" {
+  vpc_id                  = aws_vpc.nokia.id
+  cidr_block              = "10.10.1.0/24"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "Nokia-Subnet"
+  }
+}
+
+
+
+        name: Install Nginx on My new server
+            host: all
+            become: yes
+
+         tesks:
+            -name: Install nginx
+            yum:
+            name: nginx
+            state: present
+
+
+            apiVersion: v1
+        kind: ConfigMap
+        metadata:
+        nae: pathnex-config
+        data:
+        APP_MODE: "production"
+   WELCOM_MSG: "Hello Team, how are you"
+
+   #!/bin/bash
+
+echo "CPU Usage:"
+top -bn1 | grep "Cpu"
+
+echo -e "\nMemory Usage:"
+free -h
+
+echo -e "\nDisk Usage:"
+df -h /
+
+
+
+pipeline {
+    agent any
+    environment {
+        COMPONY_NAME = "HCL Tech"
+    }
+    triggers {
+        cron ('H 2 * * *') // every day at 3 AM
+    }
+    stages {
+        stage('CHeckout') {
+            steps {
+                git url: 'https://github.com/Pathnex/sample-java-app.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
+
+
+
+
+            stages:
+         - build
+
+     build:
+        stage: build
+        image: maven:3.8.1-jdk-17
+        script:
+        -git clone https://github.com/Pathnex/sample-java-app.git
+        -cd sample-java-app
+        -mvn clean package
